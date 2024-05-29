@@ -5,7 +5,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT | 3000;
+const PORT = process.env.PORT || 3000;
 const TMDB_API_KEY = process.env.TMDB_API_KEY
 
 app.get('/', (req, res) => {
@@ -50,6 +50,22 @@ app.get('/movies/search', async (req, res) => {
     } catch (error) {
         console.error('Error searching for movies', error);
         res.status(500).send('Internal server error');
+    }
+});
+
+app.get('/movie/:movieId/watch/providers', async (req, res) => {
+    const { movieId } = req.params;
+    
+    try {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/watch/providers`, {
+            params: {
+                api_key: TMDB_API_KEY
+            }
+        });
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error fetching watch providers:', error);
+        res.status(500).send('Internal Server Error');
     }
 });
 
