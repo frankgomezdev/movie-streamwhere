@@ -2,31 +2,12 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="navbar bg-base-100">
-  <div className="navbar-start">
-    <div className="dropdown">
-      <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h8m-8 6h16" /></svg>
+    <nav className="p-3 md:p-6 sticky bg-neutral-100/80 z-50 backdrop-blur-2xl top-0 w-full lg:grid grid-cols-5">
+      <div className="flex items-center col-span-1 xl:col-span-2 justify-between lg:justify-start">
+        <a href="" className="pr-4 block flex-shrink-0"></a>
       </div>
-      <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-        <li><a>New</a></li>
-        <li><a>Popular</a></li>
-      </ul>
-    </div>
-    <a className="hidden md:flex md:btn md:btn-ghost md:text-xl">StreamWhere</a>
-  </div>
-  <div className="navbar-center">
-  <div className="form-control">
-      <input type="text" placeholder="Search for movies or series..." className="input input-bordered w-96" />
-    </div>
-  </div>
-  <div className="navbar-end hidden lg:flex">
-  <ul className="menu menu-horizontal px-1">
-      <li><a>New</a></li>
-      <li><a>Popular</a></li>
-    </ul>
-  </div>
-</div>
+      <button className="flex items-center mt-3 lg:mt-0 hover:bg-neutral-300/70 col-span-3 xl:col-span-1 transition-colors gap-2 py-.15 justify-start md:justify-center px-4 h-10 w-full lg:max-w-sm xl:max-w-full mx-auto text-neutral-600 bg-neutral-200/70 rounded-full text-sm">Search for movies...</button>
+    </nav>
   );
 };
 
