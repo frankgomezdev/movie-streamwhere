@@ -53,6 +53,7 @@ app.get('/movies/search', async (req, res) => {
     }
 });
 
+//route for watch providers
 app.get('/movie/:movieId/watch/providers', async (req, res) => {
     const { movieId } = req.params;
     
@@ -68,6 +69,26 @@ app.get('/movie/:movieId/watch/providers', async (req, res) => {
         res.status(500).send('Internal Server Error');
     }
 });
+
+//route for movie details
+app.get('/movie/:movieId', async (req, res) => {
+    const { movieId } = req.params;
+
+    try {
+        const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}`, {
+            params: {
+                api_key: TMDB_API_KEY,
+                language: 'en-US'
+            }
+        });
+        res.json(response.data);
+    } catch (error) {
+        console.error('Error fetching movie details:', error);
+        res.status(500).send('Internal Server Error');
+    }
+});
+
+
 
 app.listen(PORT, () => {
     console.log(`Server is running on port ${PORT}`)

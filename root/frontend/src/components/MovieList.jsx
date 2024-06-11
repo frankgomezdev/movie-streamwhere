@@ -1,26 +1,10 @@
-import React from "react";
-import axios from "axios";
+import React, { useContext } from "react";
 import MovieCard from "./MovieCard";
-import { useEffect, useState } from "react";
+import MovieContext from "../context/MovieContext";
+
 
 const MovieList = () => {
-  const [movies, setMovies] = useState([]);
-
-  useEffect(() => {
-    axios
-      .get("api/movie/popular")
-      .then((response) => {
-        console.log(response.data);
-        setMovies(response.data.results);
-      })
-      .catch((error) => {
-        console.error("Error fetching popular movies:", error);
-      });
-  }, []);
-
-  useEffect(() => {
-    console.log(movies);
-  }, [movies]);
+  const movies = useContext(MovieContext);
 
   return (
     <div className="grid-container mx-auto p-4">
