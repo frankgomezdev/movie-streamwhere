@@ -21,6 +21,8 @@ const MovieCard = ({ movie }) => {
   }, [movie.id]);
 
   const numberOfCountries = Object.keys(watchProviders).length;
+  const countries = Object.keys(watchProviders);
+  console.log(`MovieID: ${movie.id}, Countries: ${countries.toString()}`);
 
   return (
     <div className="card-bordered bg-base-100 rounded-3xl min-w-0 text-neutral-500 hover:duration-100 hover:bg-neutral-200/40 transition-colors xl:aspect-[2/2.2] flex flex-col">
