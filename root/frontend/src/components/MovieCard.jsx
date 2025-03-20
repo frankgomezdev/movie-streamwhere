@@ -12,7 +12,7 @@ const MovieCard = ({ movie }) => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/movie/${movie.id}/watch/providers`)
+      .get(`${API_URL}/movie/${movie.id}/watch/providers`)
       .then((response) => {
         console.log(response.data);
         setWatchProviders(response.data.results || {});

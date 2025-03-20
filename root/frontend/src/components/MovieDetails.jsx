@@ -14,7 +14,7 @@ const MovieDetails = ({ id, movieId }) => {
   useEffect(() => {
     console.log(id);
     axios
-      .get(`${API_URL}/api/movie/${id}`)
+      .get(`${API_URL}/movie/${id}`)
       .then((response) => {
         console.log(response.data);
         setMovieDetails(response.data);

@@ -1,4 +1,5 @@
-import React from 'react'
+/* eslint-disable react/no-unknown-property */
+
 
 const Footer = () => {
   return (
