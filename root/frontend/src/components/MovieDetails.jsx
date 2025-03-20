@@ -25,7 +25,7 @@ const MovieDetails = ({ id, movieId }) => {
 
     // Fetch watch providers
     axios
-      .get(`http://localhost:5173/api/movie/${id}/watch/providers`)
+      .get(`${API_URL}/movie/${id}/watch/providers`)
       .then((response) => {
         setWatchProviders(response.data.results);
       })
