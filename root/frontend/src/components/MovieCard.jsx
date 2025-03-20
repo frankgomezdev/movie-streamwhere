@@ -48,7 +48,7 @@ const MovieCard = ({ movie }) => {
           {numberOfCountries === 1 ? "country" : "countries"}{" "}
         </span>
         <a
-          href={`/movie/${movie.id}`}
+          href={`${API_URL}/movie/${movie.id}`}
           className="text-black flex transition-transform items-center mr-1"
           // onClick={(e) => {
           //   e.preventDefault();
