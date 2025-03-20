@@ -1,5 +1,4 @@
-import React from "react";
-import { Link } from "react-router-dom";
+/* eslint-disable react/prop-types */
 import axios from "axios";
 import { useEffect, useState } from "react";
 
