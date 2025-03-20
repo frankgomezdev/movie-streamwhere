@@ -11,7 +11,7 @@ const App = () => {
 
   useEffect(() => {
     axios
-      .get(`${API_URL}/api/movie/popular`)
+      .get(`${API_URL}/movie/popular`)
       .then((response) => {
         setMovies(response.data.results);
       })
