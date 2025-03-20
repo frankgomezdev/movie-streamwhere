@@ -1,7 +1,10 @@
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
 import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import formatRuntime from "../utils/formatRuntime";
 import { isoCountries, getCountryName } from "../utils/countryCodeConverter";
+import { API_URL } from "../../config";
 
 const MovieDetails = ({ id, movieId }) => {
   const [movieDetails, setMovieDetails] = useState([]);
@@ -11,7 +14,7 @@ const MovieDetails = ({ id, movieId }) => {
   useEffect(() => {
     console.log(id);
     axios
-      .get(`http://localhost:5173/api/movie/${id}`)
+      .get(`${API_URL}/api/movie/${id}`)
       .then((response) => {
         console.log(response.data);
         setMovieDetails(response.data);

@@ -4,13 +4,13 @@ import axios from "axios";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
 import MovieContext from "./context/MovieContext";
-
+import { API_URL } from "../../config";
 const App = () => {
   const [movies, setMovies] = useState([]);
 
   useEffect(() => {
     axios
-      .get("api/movie/popular")
+      .get(`${API_URL}/api/movie/popular`)
       .then((response) => {
         setMovies(response.data.results);
       })

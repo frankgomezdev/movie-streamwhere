@@ -4,6 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
+import { API_URL } from "../../config";
 
 
 const MovieCard = ({ movie }) => {
@@ -11,7 +12,7 @@ const MovieCard = ({ movie }) => {
 
   useEffect(() => {
     axios
-      .get(`api/movie/${movie.id}/watch/providers`)
+      .get(`${API_URL}/api/movie/${movie.id}/watch/providers`)
       .then((response) => {
         console.log(response.data);
         setWatchProviders(response.data.results || {});
