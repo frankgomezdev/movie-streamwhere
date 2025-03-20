@@ -6,7 +6,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { API_URL } from "../config";
 
-
 const MovieCard = ({ movie }) => {
   const [watchProviders, setWatchProviders] = useState([]);
 
@@ -47,15 +46,12 @@ const MovieCard = ({ movie }) => {
           Streaming in {numberOfCountries}{" "}
           {numberOfCountries === 1 ? "country" : "countries"}{" "}
         </span>
-        <a
-          href={`${API_URL}/movie/${movie.id}`}
+        <Link
+          to={`/movie/${movie.id}`}
           className="text-black flex transition-transform items-center mr-1"
-          // onClick={(e) => {
-          //   e.preventDefault();
-          // }}
         >
           See where
-        </a>
+        </Link>
       </footer>
     </div>
   );
