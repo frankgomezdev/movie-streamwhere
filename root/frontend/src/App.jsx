@@ -4,7 +4,8 @@ import axios from "axios";
 import HomePage from "./pages/HomePage";
 import MovieDetailsPage from "./pages/MovieDetailsPage";
 import MovieContext from "./context/MovieContext";
-import { API_URL } from "../../config";
+import { API_URL } from "./config";
+
 const App = () => {
   const [movies, setMovies] = useState([]);
 

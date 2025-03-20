@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from "react";
 import axios from "axios";
 import formatRuntime from "../utils/formatRuntime";
 import { isoCountries, getCountryName } from "../utils/countryCodeConverter";
-import { API_URL } from "../../config";
+import { API_URL } from "../config";
 
 const MovieDetails = ({ id, movieId }) => {
   const [movieDetails, setMovieDetails] = useState([]);

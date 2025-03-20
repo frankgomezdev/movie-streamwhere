@@ -4,7 +4,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { API_URL } from "../../config";
+import { API_URL } from "../config";
 
 
 const MovieCard = ({ movie }) => {
