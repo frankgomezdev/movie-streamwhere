@@ -9,6 +9,12 @@ const app = express();
 const PORT = process.env.PORT || 3000;
 const TMDB_API_KEY = process.env.TMDB_API_KEY
 
+app.use(cors({
+    origin: ['https://streamwhere-frontend.onrender.com', 'http://localhost:3000'],
+    methods: ['GET'],
+    allowedHeaders: ['Content-Type', 'Authorization']
+}))
+
 app.get('/', (req, res) => {
     res.send("Welcome to Streamwhere's API Server")
 });
